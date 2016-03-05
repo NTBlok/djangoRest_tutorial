@@ -65,3 +65,13 @@ Wire up the API URLs by editing tutorial/urls.py
         url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
     ]
 
+Edit tutorial/settings.py to turn on pagination and set permissions for admin users
+
+    INSTALLED_APPS = [
+    'rest_framework',
+    ]
+
+    REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGE_SIZE': 10
+    }
