@@ -1,0 +1,19 @@
+# Compiled source #
+*.pyc
+
+# Databases #
+*.sqlite
+
+# Distribution / packaging #
+env/
+build/
+dist/
+lib/
+var/
+
+# Django #
+*.log
+local_settings.py
+
+# dotenv #
+.env
