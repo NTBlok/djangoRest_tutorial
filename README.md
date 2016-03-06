@@ -7,10 +7,16 @@ Create project directory
     mkdir tutorial
     cd tutorial
 
-Create a virtualenv and activate
+Create a virtualenv and activate it and add the new path
 
     virtualenv env 
     source env/bin/activate
+    export VIRTUAL_ENV="$(pwd)"/env
+    export PATH="$VIRTUAL_ENV/bin:$PATH"
+
+Verify the path is now pointing to the virtual env
+
+    which python
 
 Initial setup once virtualenv is active
 
@@ -75,3 +81,9 @@ Edit tutorial/settings.py to turn on pagination and set permissions for admin us
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
     'PAGE_SIZE': 10
     }
+
+Now try out the api
+
+    python manage.py runserver 0.0.0.0:8000
+
+Point browser to address-of-server/users/ and login
